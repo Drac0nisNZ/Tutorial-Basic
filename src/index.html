@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Book Mark Web App</title>
+</head>
+<body>
+    <h1>Add Bookmark</h1>
+    <!--Bookmarks-->
+    <div class="container" id="bookmarks-container">
+
+    </div>
+    <!-- Modal -->
+     <div class="modal-container" id="modal">
+        <div class="modal">
+            <i class="fas fa-times close-modal" id="close-modal"></i>
+
+            <div class="modal-header">
+                <h3>Add Bookmark</h3>
+            </div>
+            <div class="modal-content">
+                <form id="bookform">
+                    <!--Website Name -->
+                    <div class="form-group">
+                        <label for="website-name" class="form-label">Website Name</label>
+                        <input type="text" class="form-input" id="website-name">
+                    </div>
+                    <!-- Website URL -->
+                    <div></div>
+                        <label for="website-url" class="form-label">Website URL</label>
+                        <input type="text" class="form-input" id="website-url">
+                    </div>
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+     </div>
+     <script src="index.js"></script>
+</body>
+</html>
