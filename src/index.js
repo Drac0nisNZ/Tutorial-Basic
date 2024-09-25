@@ -1,6 +1,11 @@
-import ( app ) from "./firebaseConfig"
-import ( getAuth, createUserWithEmailAndPassword) from "firebse/auth"
+import { app } from "../firebaseConfig";
+import { getAuth, createUserWithEmailAndPassword } from "firebse/auth";
 
+const appSettings = {
+  databaseURL: "https://tutorial-f57d3-default-rtdb.asia-southeast1.firebasedatabase.app/"
+}
+
+let auth = getAuth();
 // access input field
 const input = document.querySelector('#todo-input');
 
