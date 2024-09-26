@@ -1,3 +1,5 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 import { app } from "../firebaseConfig";
 import { getAuth, createUserWithEmailAndPassword } from "firebse/auth";
 
@@ -5,15 +7,22 @@ const appSettings = {
   databaseURL: "https://tutorial-f57d3-default-rtdb.asia-southeast1.firebasedatabase.app/"
 }
 
+const app = initializeApp(appSettings);
+const database = getDatabase(app);
+const todoInDB = ref(database, "todo");
+const inputFieldEL = document.getElementById("todo-input")
+const addButtonEL = document.getElementById("submit")
+
 let auth = getAuth();
-// access input field
-const input = document.querySelector('#todo-input');
 
 // Listening to click event from "Add" button.
-document.querySelector('#submit').addEventListener('click', () => {
+addButtonEL.addEventListener('click', () => {
   // value of the input field
-  const inputData = input.value;
-  input.value = "";
+  let inputData = inputFieldEL.value;
+
+  push(todoInDB, inputData)
+
+  console.log(`${inputData} added to database`)
 
   // creating todo item element
   const todo_el = document.createElement('div');
